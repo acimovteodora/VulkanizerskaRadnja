@@ -1,13 +1,38 @@
 package guma.radnja;
 
+/**
+ * Klasa koja predstavlja vulkanizersku radnju
+ * 
+ * @author Teodora Acimov
+ *
+ * @version 0.1
+ *
+ */
+
 import java.util.LinkedList;
 
 import guma.AutoGuma;
 
 public class VulkanizerskaRadnja {
 	
+	/**
+	 * Lista guma iz vulkanizerske radnje
+	 */
 	private LinkedList<AutoGuma> gume = new LinkedList<AutoGuma>();
-
+	
+	/**
+	 * Dodaje novu gumu u vulkanizersku radnju
+	 * @param a nova guma koja se dodaje u vulkanizersku radnju
+	 * @throws java.lang.RuntimeException ako je guma:
+	 * 
+	 * <ul style="list-style-type:circle">
+	 * 
+	 * <li>null String</li>
+	 * 
+	 * <li>vec sadrzana u vulkanizerskoj radnji</li>
+	 * 
+	 * </ul>
+	 */
 	public void dodajGumu(AutoGuma a) {
 		
 		if (a == null)
@@ -19,6 +44,11 @@ public class VulkanizerskaRadnja {
 		gume.addFirst(a);
 	}
 
+	/**
+	 * Pronalazi sve gume trazene marke i modela u vulkanizerskoj radnji
+	 * @param markaModel trazena markaModel gume
+	 * @return listu odgovarajucih guma
+	 */
 	public LinkedList<AutoGuma> pronadjiGumu(String markaModel) {
 		if (markaModel == null)
 			return null;
